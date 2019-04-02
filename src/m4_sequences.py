@@ -6,8 +6,8 @@ This problem provides practice at:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Emily Macak.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -36,7 +36,7 @@ import rosegraphics as rg
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_practice_problem4a()
+   # run_test_practice_problem4a()
     run_test_practice_problem4b()
     run_test_practice_problem4c()
     run_test_practice_problem4d()
@@ -142,6 +142,12 @@ def practice_problem4a(sequence):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 minutes.
     ###########################################################################
+    seq2 = []
+    for k in range(len(sequence), -1, -1):
+        if sequence[k] == sequence[k-1]:
+            seq2 = seq2 + [k]
+
+    return seq2
 
 
 def run_test_practice_problem4b():
@@ -205,6 +211,13 @@ def practice_problem4b(sequence):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 minutes.
     ###########################################################################
+    largest = -100000000000000
+    for k in range(len(sequence)):
+        if k %2 == 0:
+            if sequence[k] > largest:
+                largest = sequence[k]
+    return largest
+
 
 
 def run_test_practice_problem4c():
@@ -307,6 +320,8 @@ def practice_problem4c(points):
     #    DIFFICULTY:      9
     #    TIME ESTIMATE:   15 minutes.
     ###########################################################################
+    # for k in range(len(points)):
+    #     if is_prime(points):
 
 
 def run_test_practice_problem4d():
@@ -399,7 +414,12 @@ def practice_problem4d(sequence):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 minutes.
     ###########################################################################
-
+    total = 0
+    for k in range(len(sequence)):
+        if is_prime(sequence[k]):
+            total = total + sequence[k]
+            print(total)
+    return total
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
